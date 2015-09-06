@@ -10,7 +10,12 @@ module.exports = {
 	find: function(req, res) {
 		console.log("GET /message");
 		Message.find().exec(function(err, messages) {
-			Message.subscribe(req.socket);
+			if (req.isSocket) {
+				Message.subscribe(req, messages);
+				if (req.options.autoWatch) {
+					Message.watch(req);
+				}
+			}
 			res.json(messages);
 		});
 	},
@@ -21,7 +26,9 @@ module.exports = {
 		Message.create({
 			text: text
 		}).exec(function(err, message) {
-			Message.publishCreate(message);
+			if (req.isSocket) {
+				Message.publishCreate(message, !req.options.mirror && req);
+			}
 			res.json(message);
 		});
 	}
