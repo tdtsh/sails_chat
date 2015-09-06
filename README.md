@@ -1,20 +1,44 @@
 # sails_chat
 
-Sample Chat App of [Sails](http://sailsjs.org).
+Sample Chat App of [Sails](http://sailsjs.org) v0.11.0.
 As my own notes for when I make something in the sails.js.
 
+## Install MongoDB
 
-## create project
+run MongoDB (ex. OSX)
+
+```
+brew update
+
+brew install mongodb
+
+mongod --config /usr/local/etc/mongod.conf
+```
+
+
+## Install and Run sails
 
 sudo npm i -g sails
-(v.0.11.0)
+
+sails lift
+
+
+## Run Unit Test
+
+npm test
+
+
+
+## MyNote
+
+### create project
 
 sails new sails_chat
 
 cd sails_chat
 sails generate api message
 
-## Configuration UnitTest
+### Configuration UnitTest
 [http://sailsjs.org/documentation/concepts/testing](http://sailsjs.org/documentation/concepts/testing)
 
 npm i --save-dev supertest
@@ -31,20 +55,7 @@ vi config/appconfig.js
 >> Prepare configuration file. (なんとなく)
 
 
-## MongoDB
-
-run MongoDB (ex. OSX)
-
-```
-brew update
-
-brew install mongodb
-
-mongod --config /usr/local/etc/mongod.conf
-```
-
-
-## Configration Model
+### Configration Model
 [http://sailsjs.org/documentation/concepts/models-and-orm/model-settings](http://sailsjs.org/documentation/concepts/models-and-orm/model-settings)
 
 vi config/model.js
@@ -57,7 +68,7 @@ migrate: 'alter'
 npm i --save sails-mongo
 
 
-## Page
+### Prepare View
 
 >> modify assets/favicon.ico
 
