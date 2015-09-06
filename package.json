@@ -1,8 +1,8 @@
 {
   "name": "sails_chat",
   "private": true,
-  "version": "0.0.0",
-  "description": "a Sails application",
+  "version": "0.0.1",
+  "description": "a Sails chat application",
   "keywords": [],
   "dependencies": {
     "ejs": "~0.8.4",
@@ -21,7 +21,8 @@
     "include-all": "~0.1.3",
     "rc": "~0.5.0",
     "sails": "~0.11.0",
-    "sails-disk": "~0.10.0"
+    "sails-disk": "~0.10.0",
+    "sails-mongo": "^0.11.2"
   },
   "scripts": {
     "debug": "node debug app.js",
@@ -31,8 +32,11 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/tadatoshi_hanazaki/sails_chat.git"
+    "url": "https://github.com/tdtsh/sails_chat"
   },
   "author": "tadatoshi_hanazaki",
-  "license": ""
+  "license": "",
+  "devDependencies": {
+    "supertest": "^1.1.0"
+  }
 }

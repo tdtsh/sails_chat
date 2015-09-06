@@ -8,9 +8,5 @@
 module.exports = {
 
 	attributes: {
-	},
-
-	find: function (args, cb) {
-		cb(null, {});
 	}
 };
