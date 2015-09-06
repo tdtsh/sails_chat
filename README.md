@@ -9,3 +9,8 @@ sudo npm i -g sails
 (v.0.11.0)
 
 sails new sails_chat
+
+cd sails_chat
+sails generate api message
+
+
