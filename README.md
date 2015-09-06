@@ -18,7 +18,8 @@ mongod --config /usr/local/etc/mongod.conf
 
 ## Install and Run sails
 
-sudo npm i -g sails
+sudo npm install -g sails
+npm install
 
 sails lift
 
@@ -41,7 +42,7 @@ sails generate api message
 ### Configuration UnitTest
 [http://sailsjs.org/documentation/concepts/testing](http://sailsjs.org/documentation/concepts/testing)
 
-npm i --save-dev supertest
+npm install --save-dev supertest
 
 vi test/bootstrap.test.js
 vi test/unit/controllers/MessageController.test.js
@@ -65,7 +66,7 @@ connection: 'someMongodbServer',
 migrate: 'alter'
 ```
 
-npm i --save sails-mongo
+npm install --save sails-mongo
 
 
 ### Prepare View
