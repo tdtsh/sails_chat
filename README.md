@@ -1,10 +1,10 @@
 # sails_chat
 
->> Sample Chat App of Sails.js
->> As my own notes for when I make something in the sails.js.
+Sample Chat App of [Sails](http://sailsjs.org).
+As my own notes for when I make something in the sails.js.
 
-a [Sails](http://sailsjs.org) application
 
+## create project
 
 sudo npm i -g sails
 (v.0.11.0)
@@ -55,5 +55,15 @@ migrate: 'alter'
 ```
 
 npm i --save sails-mongo
+
+
+## Page
+
+>> modify assets/favicon.ico
+
+vi views/layout.ejs
+>> modify browser title
+
+
 
 

@@ -37,6 +37,7 @@
   "author": "tadatoshi_hanazaki",
   "license": "",
   "devDependencies": {
+    "lodash": "^3.10.1",
     "supertest": "^1.1.0"
   }
 }

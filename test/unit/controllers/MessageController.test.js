@@ -3,8 +3,8 @@ var request = require('supertest');
 
 describe('MessageController', function() {
 
-	describe('hoge', function() {
-		it('fuga', function (done) {
+	describe('default test', function() {
+		it('default it', function (done) {
 			request(sails.hooks.http.app)
 				.get('/message/')
 				.expect(200, done);
