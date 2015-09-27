@@ -1,7 +1,13 @@
-<div id="chat-outer">
-	<ul id="messages"></ul>
+<div id="chat-main">
+	<div id="left-bar">
+		<textarea id="thread-form" placeholder="スレッド名"></textarea>
+		<div id="thread-create-button">作成</div>
+		<p id="current-thread"></p>
+		<p id="threads"></p>
+	</div>
+	<ul id="chat-timeline"></ul>
 	<div id="chat-form">
-		<textarea id="send-message"></textarea>
-		<input id='send-button' type='submit' value='Send'/>
+		<textarea id="chat-textarea"></textarea>
+		<input id='chat-send-button' type='submit' value='Send'/>
 	</div>
 </div>

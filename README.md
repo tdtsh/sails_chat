@@ -38,6 +38,7 @@ sails new sails_chat
 
 cd sails_chat
 sails generate api message
+sails generate api thread
 
 ### Configuration UnitTest
 [http://sailsjs.org/documentation/concepts/testing](http://sailsjs.org/documentation/concepts/testing)

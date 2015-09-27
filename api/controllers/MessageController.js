@@ -7,29 +7,39 @@
 
 module.exports = {
 
+	/************************************************
+	 * メッセージ一覧を返す.
+	 ************************************************/
 	find: function(req, res) {
-		console.log("GET /message");
-		Message.find().exec(function(err, messages) {
-			if (req.isSocket) {
-				Message.subscribe(req, messages);
-				if (req.options.autoWatch) {
-					Message.watch(req);
-				}
-			}
+		var threadId = req.param('thread_id') || '';
+		Message.find({
+			thread: threadId
+		}).exec(function(err, messages) {
 			res.json(messages);
 		});
 	},
-
+	/************************************************
+	 * メッセージを作成する.
+	 ************************************************/
 	create: function(req, res) {
-		console.log("POST /message");
-		var text = req.param('text');
+
+		var text = req.param('text') || '';
+		var threadId = req.param('thread_id');
 		Message.create({
+			thread: threadId,
 			text: text
 		}).exec(function(err, message) {
+
 			if (req.isSocket) {
-				Message.publishCreate(message, !req.options.mirror && req);
+				console.log('message.thread:' + message.thread);
+				Thread.publishUpdate(message.thread, {
+					model: 'message',
+					body: message
+				}, !req.options.mirror && req);
 			}
+
 			res.json(message);
 		});
 	}
+
 };
